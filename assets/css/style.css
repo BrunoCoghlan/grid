@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: simple planner;
+    src: url(../font/SIMPLE\ PLANNER.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: roboto;
+}
+
+/*definicion del gridlayout*/
+body {
+    display: grid;
+    grid-template-columns: .2fr 1fr;
+    grid-template-rows: .15fr 2.7fr .15fr;
+    height: 100vh;
+    grid-template-areas:
+        "nav nav"
+        "aside main"
+        "footer footer"
+    ;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #FFA1C9;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+nav>h1 {
+    opacity: 90%;
+    font-family: simple planner;
+}
+
+/*orden de aside con flex, lista y logo*/
+aside>img {
+    margin: 0.5rem 0 0 0;
+    border-radius: 50%;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #faeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+aside>ul {
+    list-style: none;
+    margin: 2rem 0 0 0;
+}
+
+aside>ul>li>span {
+    color: rgb(211, 211, 211);
+}
+
+/*seccion main, orden con grid, card con flex*/
+main {
+    grid-area: main;
+    background-color: #faeeee;
+    overflow-y: scroll;
+
+}
+
+main>section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    margin: 1rem 1rem 1rem 0;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffc8c8;
+    border-radius: 0.5rem;
+    padding: 0.15rem;
+}
+
+/*Boton y estilos*/
+.card>button {
+    border: 0px;
+    width: 100%;
+    background-color: #F94892;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: .25s;
+    margin: 1rem 0 0 0;
+}
+
+.card>button:hover {
+    font-size: 1.1rem;
+    opacity: 90%;
+}
+
+.card>button:active {
+    font-size: 1.3rem;
+    opacity: 80%;
+}
+
+.card>img {
+    width: 100%;
+    border-radius: 0.5rem;
+
+}
+
+/*estilos para texto y precio*/
+.card>h3 {
+    margin: 1rem 0 0 0;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #FFA1C9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-style: italic;
+}
